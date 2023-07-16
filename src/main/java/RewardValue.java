@@ -8,30 +8,28 @@ public class RewardValue {
     }
 
     public RewardValue(int milesValue) {
-        this.milesValue = milesValue;
+        this.cashValue = convertToCash(milesValue);
     }
 
+    public int getMilesValue() {
+        return convertToMiles(this.cashValue);
+    }
+
+    public double getCashValue() {
+        return cashValue;
+    }
     private static int convertToMiles(double cashValue) {
         return (int) (cashValue / MILES_TO_CASH_CONVERSION_RATE);
     }
     private static double convertToCash(int milesValue) {
         return milesValue*MILES_TO_CASH_CONVERSION_RATE;
     }
-
-    public int getMilesValue() {
-        return milesValue;
-    }
-
-    public double getCashValue() {
-        return cashValue;
-    }
-
-    public void setCashValue(double cashValue) {
-        this.cashValue = cashValue;
-    }
-
-    public void setMilesValue(int milesValue) {
-        this.milesValue = milesValue;
-    }
+//    public void setCashValue(double cashValue) {
+//        this.cashValue = cashValue;
+//    }
+//
+//    public void setMilesValue(int milesValue) {
+//        this.milesValue = milesValue;
+//    }
 }
 
